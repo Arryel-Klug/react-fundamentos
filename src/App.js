@@ -3,7 +3,16 @@
 import React from "react";
 
 function App() {
-  return <h1>Componente App</h1>;
-}
+  return (
+  // <React.Fragment> ou <> 
+  <>
+    <h1>Componente App!!!!!</h1>
+    <h2>Subtitulo</h2>
+    <h2>Subtitulo</h2>
+    <h2>Subtitulo</h2>
+    <h2>Subtitulo</h2>    
+  </>
+  );
+};
 
 export default App;
