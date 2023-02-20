@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'none',
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -20,5 +21,8 @@ module.exports = {
       exclude: /node_modules/,
       use: 'babel-loader'},      
     ],
+  },
+  devServer: {
+    port: 3000,
   },
 };
