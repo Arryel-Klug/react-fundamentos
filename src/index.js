@@ -8,9 +8,11 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 
+import App from './App';
+
+//Functional component e Class Component
+
 ReactDOM.render(
-  <h1 id='title'>
-    <span>Olá World!!</span>
-  </h1>,
+  <App />,
   document.getElementById('root'),
 );
