@@ -2,15 +2,17 @@
 
 import React from "react";
 
+const category = 'Posts da Semana';
+
+//Render
+
 function App() {
   return (
   // <React.Fragment> ou <> 
+  // Entre chaves o JSX identifica como JS
   <>
-    <h1>Componente App!!!!!</h1>
-    <h2>Subtitulo</h2>
-    <h2>Subtitulo</h2>
-    <h2>Subtitulo</h2>
-    <h2>Subtitulo</h2>    
+    <h1>JStacks</h1>    
+    <h2>{`${category} de 2023`}</h2>    
   </>
   );
 };
