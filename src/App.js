@@ -11,25 +11,28 @@ function App() {
 
   //Props (properties)
   <>
-    <Header title='JStackss'> 
+    <Header> 
       <h2>Posts da semana</h2>  
     </Header>
     <hr />
 
     <Post
+      likes={50}
       post={{
         title:'Título da noticia 01',
         subtitle:'Subtitulo da Noticia 01'
      }}     
     />
     <Post
+      likes={10}
       post={{
         title:'Título da noticia 02',
         subtitle:'Subtitulo da Noticia 02'
      }}     
     /> 
     <Post 
-      post={{
+    likes={2}
+    post={{
         title:'Título da noticia 03',
         subtitle:'Subtitulo da Noticia 03'
     }}
