@@ -4,6 +4,14 @@ import React from "react";
 import Post from "./Post";
 import Header from './Header';
 
+const posts = [
+  { title: 'Title#01', subtitle: 'Sub01', likes:20 },
+  { title: 'Title#02', subtitle: 'Sub02', likes:30 },
+  { title: 'Title#03', subtitle: 'Sub03', likes:40 },
+  { title: 'Title#04', subtitle: 'Sub04', likes:50 },
+  
+];
+
 function App() {
   return (
   // <React.Fragment> ou <> 
@@ -14,29 +22,19 @@ function App() {
     <Header> 
       <h2>Posts da semana</h2>  
     </Header>
-    <hr />
+    <hr />   
 
-    <Post
-      likes={50}
-      post={{
-        title:'Título da noticia 01',
-        subtitle:'Subtitulo da Noticia 01'
-     }}     
-    />
-    <Post
-      likes={10}
-      post={{
-        title:'Título da noticia 02',
-        subtitle:'Subtitulo da Noticia 02'
-     }}     
-    /> 
-    <Post 
-    likes={2}
-    post={{
-        title:'Título da noticia 03',
-        subtitle:'Subtitulo da Noticia 03'
-    }}
-    />
+    {posts.map(post => (
+      <Post 
+        key={post.title}
+        likes={post.likes}
+        post ={{
+          title: post.title,
+          subtitle: post.subtitle,
+        }}
+      />
+    ))} 
+    
   </>
   );
 };
