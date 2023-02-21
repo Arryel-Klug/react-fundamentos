@@ -8,13 +8,16 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from './components/App';
 
-import './index.scss';
+import GlobalStyle from './styles/global'
 
 //Functional component e Class Component
 
 ReactDOM.render(
-  <App />,
+  <>
+    <GlobalStyle />
+    <App />
+  </>,
   document.getElementById('root'),
 );
