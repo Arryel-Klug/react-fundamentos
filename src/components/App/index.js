@@ -6,35 +6,36 @@ import Header from '../Header';
 import { ThemeProvider } from '../../context/ThemeContext'
 
 import styles from './App.scss'
+import {Title} from './styles'
 
 
 
 function App() {
-  
+
 
   const [posts, setPosts] = useState([
     { id: Math.random(), title: 'Title#01', subtitle: 'Sub01', likes:20, read: false, removed: false },
     { id: Math.random(), title: 'Title#02', subtitle: 'Sub02', likes:30, read: true, removed: true },
     { id: Math.random(), title: 'Title#03', subtitle: 'Sub03', likes:40, read: false, removed: false },
     { id: Math.random(), title: 'Title#04', subtitle: 'Sub04', likes:50, read: true, removed: false },
-    
+
   ]);
 
-  
 
-  function handleRefresh(){  
+
+  function handleRefresh(){
     setPosts((prevState) => [
       ...prevState,
       {
-        id: Math.random(), 
-        title: `Title#0${prevState.length+1}`, 
-        subtitle: `Sub#0${prevState.length+1}`, 
+        id: Math.random(),
+        title: `Title#0${prevState.length+1}`,
+        subtitle: `Sub#0${prevState.length+1}`,
         likes: 50,
         read: false,
         removed: false,
-      } 
+      }
     ]);
-    
+
   }
 
   function handleRemovePost(postId){
@@ -47,28 +48,28 @@ function App() {
     ));
   }
   return (
-  // <React.Fragment> ou <> 
+  // <React.Fragment> ou <>
   // Entre chaves o JSX identifica como JS
 
   //Props (properties)
   <ThemeProvider>
-    <Header> 
-      <h2 className={styles.title}>
+    <Header>
+      <Title as="h2">
         Posts da semana
         <button onClick={handleRefresh}>Atualizar</button>
-      </h2>  
+      </Title>
     </Header>
-    <hr />   
+    <hr />
 
     {posts.map(post => (
-      <Post 
+      <Post
         key={post.id}
         likes={post.likes}
         onRemove={handleRemovePost}
-        post ={post}        
+        post ={post}
       />
-    ))} 
-    
+    ))}
+
   </ThemeProvider>
   );
 };
