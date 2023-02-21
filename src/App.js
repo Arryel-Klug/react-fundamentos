@@ -5,7 +5,7 @@ import Post from "./Post";
 import Header from './Header';
 import { ThemeProvider } from './ThemeContext'
 
-import styles from './App.css'
+import styles from './App.scss'
 
 
 
