@@ -7,10 +7,10 @@ import Header from './Header';
 
 function App() {
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Title#01', subtitle: 'Sub01', likes:20 },
-    { id: Math.random(), title: 'Title#02', subtitle: 'Sub02', likes:30 },
-    { id: Math.random(), title: 'Title#03', subtitle: 'Sub03', likes:40 },
-    { id: Math.random(), title: 'Title#04', subtitle: 'Sub04', likes:50 },
+    { id: Math.random(), title: 'Title#01', subtitle: 'Sub01', likes:20, read: false },
+    { id: Math.random(), title: 'Title#02', subtitle: 'Sub02', likes:30, read: true },
+    { id: Math.random(), title: 'Title#03', subtitle: 'Sub03', likes:40, read: false },
+    { id: Math.random(), title: 'Title#04', subtitle: 'Sub04', likes:50, read: true },
     
   ]);
   function handleRefresh(){  
@@ -21,6 +21,7 @@ function App() {
         title: `Title#0${prevState.length+1}`, 
         subtitle: `Sub#0${prevState.length+1}`, 
         likes:50,
+        read: false,
       } 
     ]);
     
@@ -28,7 +29,7 @@ function App() {
 
   function handleRemovePost(postId){
     setPosts((prevState) => (
-      prevState.filter(post => post.id !== postId)
+      prevState.filter(post => post.id != postId)
     ));
   }
   return (
@@ -50,11 +51,7 @@ function App() {
         key={post.id}
         likes={post.likes}
         onRemove={handleRemovePost}
-        post ={{
-          id: post.id,
-          title: post.title,
-          subtitle: post.subtitle,
-        }}
+        post ={post}
       />
     ))} 
     
