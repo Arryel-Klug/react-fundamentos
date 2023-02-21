@@ -10,6 +10,8 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
+import './index.css';
+
 //Functional component e Class Component
 
 ReactDOM.render(
